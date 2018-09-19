@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Pampasy</string>
+
+    <string name="saldo">Saldo</string>
+    <string name="topup">TOP UP</string>
+    <string name="topup_saldo">TOP UP SALDO</string>
+    <string name="topup_saldo_small">Top up saldo</string>
+    <string name="unique_code">Kode Unik</string>
+    <string name="biaya_layanan">Biaya Layanan</string>
+    <string name="total">TOTAL</string>
+    <string name="time">Waktu</string>
+    <string name="date">Tanggal</string>
+    <string name="transaction">Transaksi</string>
+    <string name="method_payment">Metode Bayar</string>
+    <string name="note">Note</string>
+    <string name="voucher">Voucher</string>
+    <string name="pengisian_saldo">Pengisian saldo ke %s</string>
+    <string name="order_id">Order ID</string>
+    <string name="detail_transaksi_txt">Detail Transaksi</string>
+    <string name="internet_data">Data</string>
+    <string name="pulsa_hp">Pulsa</string>
+    <string name="pascabayar">Pascabayar</string>
+    <string name="pdam">PDAM</string>
+    <string name="token_listrik">PLN</string>
+    <string name="bpjs">BPJS KS</string>
+    <string name="tv_internet">TV Berbayar</string>
+    <string name="multifinance">Cicilan</string>
+    <string name="baznas">BAZNAS</string>
+    <string name="asuransi">Asuransi</string>
+    <string name="daftar_premium">DAFTAR PREMIUM</string>
+    <string name="kode_referral_txt">Kode referral agen:</string>
+    <string name="salin">SALIN</string>
+    <string name="agen_premium">Agen Premium</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="kirim_saldo">Kirim Saldo</string>
+    <string name="kirim">Kirim</string>
+    <string name="pengaturan_pin">Pengaturan PIN</string>
+    <string name="syarat_ketentuan">Syarat &#38; Ketentuan</string>
+    <string name="faq">FAQ</string>
+    <string name="keluar">Keluar</string>
+    <string name="info_pengertian"><b>Pekerja Bukan Penerima Upah (BPU)</b> adalah pekerja yang melakukan kegiatan atau usaha ekonomi secara mandiri untuk memperoleh penghasilan dari kegiatan atau usahanya tersebut yang meliputi : Pemberi Kerja; Pekerja di luar hubungan kerja atau Pekerja mandiri dan Pekerja yang tidak termasuk pekerja di luar hubungan kerja yang bukan menerima Upah, contoh Tukang Ojek, Supir Angkot, Pedagang Keliling, Dokter, Pengacara/Advokat, Artis, dan lain-lain.</string>
+    <string name="info_pendaftaran">1. Dapat mengikuti program BPJS Ketenagakerjaan secara bertahap dengan memilih program sesuai dengan kemampuan dan kebutuhan peserta.\n\n2. Dapat mendaftar sendiri langsung ke Kantor Cabang BPJS Ketenagakerjaan atau mendaftar melalui wadah/kelompok Mitra/Payment Point (Aggregator/Perbankan) yang telah melakukan Ikatan Kerja Sama (IKS) dengan BPJS Ketenagakerjaan</string>
+    <string name="info_program">1. Jaminan Kecelakaan Kerja (JKK), terdiri dari biaya pengangkutan tenaga kerja yang mengalami kecelakaan kerja, biaya perawatan medis, biaya rehabilitasi, penggantian upah Sementara Tidak Mampu Bekerja (STMB), santunan cacat tetap sebagian, santunan cacat total tetap, santunan kematian (sesuai label), biaya pemakaman, santunan berkala bagi yang meninggal dunia dan cacat total tetap\n\n2. Jaminan Kematian (JK), terdiri dari biaya pemakaman dan santunan berkala\n\n3. Jaminan Hari Tua (JHT), terdiri dari keseluruhan iuran yang telah disetor, beserta hasil pengembangannya</string>
+    <string name="hint_name_bpjs">Nama Pendaftar</string>
+    <string name="hint_phone_bpjs">Nomor Handphone Pengguna</string>
+    <string name="hint_mothers_name_bpjs">Nama Ibu Kandung</string>
+
+    <string name="action_leave">Leave</string>
+    <string name="action_send">Send</string>
+    <string name="prompt_message">Message</string>
+
+    <string name="connect">Connected</string>
+    <string name="disconnect">Disconnected, Please check your internet connection</string>
+    <string name="error_connect">Failed to connect</string>
+
+    <string name="info_verifikasi">Maksimal nominal isi saldo untuk pengguna yang belum terverifikasi adalah <b>Rp 1.000.000</b> dan <b>Rp 10.000.000</b> untuk user terverifikasi</string>
+    <string name="begin_parking">Silahkan simpan kertas parkir anda. Dan jangan lupa untuk menekan tombol <b>&quot;Selesai Parkir&quot;</b> saat anda sudah akan pulang.</string>
+
+    <!-- messages -->
+    <string name="message_welcome">Kami online chat sekarang \n Customer Service kami siap membantu anda</string>
+    <plurals name="message_participants">
+        <item quantity="one">there\'s %d participant</item>
+        <item quantity="other">there are %d participants</item>
+    </plurals>
+    <string name="message_user_joined">%s joined</string>
+    <string name="message_user_left">%s left</string>
+    <string name="user_action_typing">is typing</string>
+
+    <!--virtual account-->
+    <string name="info_virtual_account">Layanan pembayaran virtual account dari rekening lokal maupun melalui <b>ATM Bersama/Prima/Alto.</b> Difasilitasi oleh <b>Bank Permata.</b></string>
+    <string name="info_one_virtual_account">Pilih pembayaran melalui Bank Transfer/virtual Account. <b>Catat nomor rekening tujuan &#38; nominal pembayaran anda.</b></string>
+    <string name="info_two_virtual_account"><b>Gunakan ATM yang memiliki jaringan ATM Bersama/Prima/Alto</b> untuk menyelesaikan pembayaran.</string>
+    <string name="info_three_virtual_account">Masukan <b>PIN</b> anda.</string>
+    <string name="info_four_virtual_account">Di menu utama pilih <b>\'Others\'</b> atau <b>\'lainnya\'</b> .</string>
+    <string name="info_five_virtual_account">Pilih <b>\'Transfer\'</b> lalu pilih <b>\'Antar Bank Lainnya\'</b>. Masukan kode bank Permata <b>\'013\'</b> dan di ikuti <b>Nomor Rekening Tujuan </b>yang tertampil</string>
+    <string name="info_six_virtual_account">Masukan nominal pembayaran lalu pilih <b>\'Benar\'</b></string>
+    <string name="info_seven_virtual_account"><b>Pastikan nominal pembayaran &#38; nomor rekening tujuan</b> sudah benar terisi, lalu pilih <b>\'Benar\'</b></string>
+    <string name="info_eight_virtual_account"><b>Simpan Struk bukti pembayaran</b> selama transaksi</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

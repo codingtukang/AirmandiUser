@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3e8dcb</color>
+    <color name="colorPrimaryDark">#0e57a2</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="clear">#00FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="Black">#000000</color>
+    <color name="grey_background">#dedede</color>
+    <color name="white_ocean">#FAFBFC</color>
+
+    <color name="header_background_blue">#3C92CA</color>
+    <color name="tab_indicator_orange">#F5A623</color>
+    <color name="iron_opacity_80">#CCCBCCCC</color>
+    <color name="iron">#CBCCCC</color>
+    <color name="azure">#0083F1</color>
+    <color name="starDust_opacity_40">#599D9E9F</color>
+    <color name="starDust_opacity_80">#CC9D9E9F</color>
+    <color name="starDust_opacity_60">#999D9E9F</color>
+    <color name="starDust_opacity_90">#E69D9E9F</color>
+    <color name="blue_agent">#005C98</color>
+    <color name="light_blue">#4A90E2</color>
+    <color name="light_gray">#D8D8D8</color>
+    <color name="red_voucher">#D0011B</color>
+    <color name="gray_text">#AAA8A8</color>
+    <color name="charcoal">#3F4041</color>
+    <color name="onahau">#D5EDFF</color>
+
+    <color name="username0">#e21400</color>
+    <color name="username1">#91580f</color>
+    <color name="username2">#f8a700</color>
+    <color name="username3">#f78b00</color>
+    <color name="username4">#58dc00</color>
+    <color name="username5">#287b00</color>
+    <color name="username6">#a8f07a</color>
+    <color name="username7">#4ae8c4</color>
+    <color name="username8">#3b88eb</color>
+    <color name="username9">#3824aa</color>
+    <color name="username10">#a700ff</color>
+    <color name="username11">#d300e7</color>
+
+    <color name="silver_light">#fafbfc</color> // Old : #f4f4f4
+    <color name="DarkGray">#9b9b9b</color> // Old : #A9A9A9
+    <color name="curiousBlue">#368CCF</color>
+    <color name="green_ligth">#00b200</color>
+    <color name="starDust">#9D9E9F</color>
+    <color name="denim">#1C67BD</color>
+    <color name="doveGray">#707172</color>
+    <color name="color_silver">#bdc3c7</color>
+
+</resources>

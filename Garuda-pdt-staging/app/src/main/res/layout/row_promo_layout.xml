@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container_promo"
+        android:background="@drawable/border_rounded_gray"
+        android:padding="10dp"
+        android:layout_margin="@dimen/d10"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="172dp"
+            android:id="@+id/container_image_promo"
+            >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="172dp"
+            android:id="@+id/image_promo"
+            android:visibility="visible"
+            android:background="@color/white"/>
+
+            <ProgressBar
+                android:layout_centerHorizontal="true"
+                android:id="@+id/progressBar"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+        <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yuk Pinknik"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/title_promo"/>
+
+        <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="yuk pik"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/info_promo"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

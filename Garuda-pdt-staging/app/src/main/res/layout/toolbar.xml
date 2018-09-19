@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/d55"
+    android:id="@+id/toolbar"
+    app:contentInsetEnd="0dp"
+    app:contentInsetStart="0dp"
+    android:alpha="1.0">
+    <LinearLayout
+        android:background="@drawable/border_bottom"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="@dimen/d50"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/hometoolbar_imgBtnBack"
+                android:src="@drawable/ic_arrow_back_24px"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/d17"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/hometoolbar_imgBtnMenu"
+                android:src="@drawable/menu_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/d13"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/hometoolbar_logo"
+                    android:alpha="0.8"
+                    android:layout_marginRight="@dimen/d50"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/pampasy_logo"
+                    android:layout_width="@dimen/d150"
+                    android:layout_height="fill_parent"/>
+
+                <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                    android:id="@+id/hometoolbar_title"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="@dimen/d50"
+                    android:textSize="@dimen/s18"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="@dimen/d30"
+                android:layout_height="@dimen/d30"
+                android:src="@drawable/icon_notification"
+                android:layout_gravity="center_vertical|right"
+                android:id="@+id/promo"
+                android:layout_marginRight="@dimen/d20"
+                />
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

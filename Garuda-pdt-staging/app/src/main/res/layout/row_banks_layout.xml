@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingVertical="@dimen/d5">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/container_banks_list"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:id="@+id/bank_icon"
+                android:src="@drawable/logo_back_dummy"
+                />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/d10">
+                <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bank_name"
+                    android:text="Nama Bank"
+                    android:textSize="@dimen/s16"
+                    android:layout_gravity="center"
+                    />
+                <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bank_account"
+                    android:text="Nomor Rekening"
+                    android:textSize="@dimen/s12"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chevron_right"
+                android:paddingVertical="@dimen/d15"/>
+    </LinearLayout>
+</LinearLayout>

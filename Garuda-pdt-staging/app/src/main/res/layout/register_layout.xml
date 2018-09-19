@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_ocean">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="@dimen/d130">
+            <ImageView
+                android:layout_width="@dimen/d65"
+                android:layout_height="wrap_content"
+                android:id="@+id/register_image"
+                android:src="@drawable/logo_icon"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/d30">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/s17"
+                    android:background="@drawable/border_round_light_gray"
+                    android:padding="@dimen/d15"
+                    android:textAlignment="center"
+                    android:id="@+id/register_name"
+                    android:hint="Nama Pengguna"
+                    android:maxLength="25"
+                    android:inputType="text"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/s17"
+                    android:background="@drawable/border_round_light_gray"
+                    android:padding="@dimen/d15"
+                    android:textAlignment="center"
+                    android:hint="Nomor Handphone"
+                    android:id="@+id/register_mobile"
+                    android:layout_marginTop="@dimen/d10"
+                    android:inputType="number|phone"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/s17"
+                    android:background="@drawable/border_round_light_gray"
+                    android:padding="@dimen/d15"
+                    android:layout_marginTop="@dimen/d10"
+                    android:textAlignment="center"
+                    android:id="@+id/register_email"
+                    android:inputType="textEmailAddress"
+                    android:hint="Email"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/s17"
+                    android:background="@drawable/border_round_light_gray"
+                    android:padding="@dimen/d15"
+                    android:layout_marginTop="@dimen/d10"
+                    android:textAlignment="center"
+                    android:inputType="text"
+                    android:id="@+id/register_referral"
+                    android:hint="Kode Referral (Opsional)"/>
+
+                <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="@dimen/d20"
+                    android:textSize="@dimen/s10"
+                    android:text="Dengan menekan tombol DAFTAR, anda telah setuju dengan Syarat dan Ketentuan"/>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d20"
+                android:background="@drawable/border_round_blue_gradient"
+                android:textColor="@color/white"
+                android:id="@+id/process_register"
+                android:text="DAFTAR"
+                android:textSize="@dimen/s20"
+                android:padding="@dimen/d15"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sudah Punya Akun? Masuk"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/d10"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
