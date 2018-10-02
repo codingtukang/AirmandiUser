@@ -27,6 +27,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//import com.pasyappagent.pasy.modul.chat.ChatActivity;
+import com.pasyappagent.pasy.PasyAgentApplication;
+import com.pasyappagent.pasy.modul.chat.ChatActivity;
+
 import com.jakewharton.rxbinding.view.RxView;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnClickListener;
@@ -47,6 +51,7 @@ import com.pasyappagent.pasy.modul.promo.PromoActivity;
 import com.pasyappagent.pasy.modul.purchase.PurchaseActivity;
 import com.pasyappagent.pasy.modul.scanqr.ScanQRActivity;
 import com.pasyappagent.pasy.modul.topup.topup.TopupActivity;
+import io.socket.client.Socket;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -66,6 +71,7 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
     private Button pulsaBtn;
     private Button plnBtn;
     private Button dealsBtn;
+//    private Button newChat;
     private LinearLayout containerBaznas;
     private LinearLayout purchaseData;
     private LinearLayout purchasePulsa;
@@ -85,6 +91,7 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
     private TextView name;
     private TextView phone;
     private TextView point;
+    private ImageView newChat;
 //    private ImageView scan;
     public static final String BALANCE = "balance";
     private LinearLayout memberNumberContainer;
@@ -133,6 +140,7 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
         pulsaBtn = (Button) view.findViewById(R.id.pulsa_btn);
         plnBtn = (Button) view.findViewById(R.id.pln_btn);
         dealsBtn = (Button) view.findViewById(R.id.deal_btn);
+        newChat = (ImageView) view.findViewById(R.id.newChat);
         containerBaznas = (LinearLayout) view.findViewById(R.id.baznas);
         purchaseData = (LinearLayout) view.findViewById(R.id.purchase_data);
         purchasePulsa = (LinearLayout) view.findViewById(R.id.purchase_pulsa);
@@ -283,6 +291,23 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
             @Override
             public void call(Void aVoid) {
                 startActivity(new Intent(getActivity(), TopupActivity.class));
+            }
+        });
+
+        RxView.clicks(newChat).subscribe(new Action1<Void>() {
+            @Override
+            public void call(Void aVoid) {
+////                mSlidingMenu.toggle();
+//                PasyAgentApplication app = (PasyAgentApplication) getApplication();
+//                Socket mSocket = app.getSocket();
+//                GAgent agent = PreferenceManager.getAgent();
+//                mSocket.emit("join room", agent.id);
+//                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+//                String[] user = PreferenceManager.getUser();
+//                intent.putExtra("username", user[0]);
+//                intent.putExtra("numUsers", 2);
+//                startActivity(intent);
+                startActivity(new Intent(getActivity(), com.pasyappagent.pasy.modul.chatNew.topup.TopupActivity.class));
             }
         });
 

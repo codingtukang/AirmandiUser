@@ -47,12 +47,12 @@
 
                 <ImageView
                     android:id="@+id/hometoolbar_logo"
-                    android:alpha="0.8"
-                    android:layout_marginRight="@dimen/d50"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/pampasy_logo"
                     android:layout_width="@dimen/d150"
-                    android:layout_height="fill_parent"/>
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="@dimen/d50"
+                    android:alpha="0.8"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/pampasy_logo" />
 
                 <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
                     android:id="@+id/hometoolbar_title"

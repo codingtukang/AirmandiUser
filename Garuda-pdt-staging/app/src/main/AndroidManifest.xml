@@ -67,6 +67,16 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".modul.topup.topupstatus.StatusTopupActivity"
             android:screenOrientation="portrait"/>
+        <!-- New Chat -->
+        <activity android:name=".modul.chatNew.topup.TopupActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modul.chatNew.topuptransfer.TransferTopupActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modul.chatNew.topupmethod.PaymentMethodTopupActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modul.chatNew.topupstatus.StatusTopupActivity"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".modul.purchase.PurchaseActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
@@ -141,6 +151,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".modul.topup.topupcreditcard.CreditcardTopupActivity"
             android:screenOrientation="portrait"/>
+        <!-- Chat New -->
+        <activity android:name=".modul.chatNew.topupcreditcard.CreditcardTopupActivity"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".modul.creditcard.inputcreditcard.InputCreditcardActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".modul.creditcard.webview.VeritransWebViewActivity"/>
@@ -169,6 +183,10 @@
             android:screenOrientation="portrait"/>
 
         <activity android:name=".modul.topup.topupvirtualaccount.VirtualAccountActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".modul.chatNew.topupvirtualaccount.VirtualAccountActivity"
             android:screenOrientation="portrait">
         </activity>
 

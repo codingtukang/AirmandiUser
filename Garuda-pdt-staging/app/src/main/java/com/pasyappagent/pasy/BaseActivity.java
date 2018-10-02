@@ -256,6 +256,17 @@ public abstract class BaseActivity extends AppCompatActivity{
         header.setBackgroundColor(getResources().getColor(R.color.white));
     }
 
+    protected void setToolbarChat(String title) {
+        backBtn.setVisibility(View.VISIBLE);
+        menuBtn.setVisibility(View.GONE);
+        toolbarTitle.setVisibility(View.VISIBLE);
+        toolbarTitle.setText(title);
+        toolbarTitle.setTextColor(getResources().getColor(R.color.black));
+        imageHeader.setVisibility(View.GONE);
+        promo.setVisibility(View.GONE);
+        header.setBackgroundColor(getResources().getColor(R.color.white));
+    }
+
     protected void setToolbarLogo() {
         backBtn.setVisibility(View.GONE);
         toolbarTitle.setVisibility(View.GONE);
