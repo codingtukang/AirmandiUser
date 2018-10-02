@@ -51,7 +51,7 @@ public class DealsFragment extends Fragment implements RecyDealsAdapter.ActionDe
         mAdapter = new RecyDealsAdapter(this);
         dealsList = (RecyclerView) view.findViewById(R.id.promo_list);
         dealsList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        dealsList.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+        //dealsList.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
         dealsList.setAdapter(mAdapter);
     }
 

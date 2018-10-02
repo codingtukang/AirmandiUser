@@ -60,7 +60,7 @@ public class EditProfileActivity extends BaseActivity implements CommonInterface
 
     @Override
     protected void setContentViewOnChild() {
-        setToolbarTitle("Edit Profile");
+        setToolbarTitle("Ubah Akun");
         textName = (EditText) findViewById(R.id.register_name);
         textMobile = (EditText) findViewById(R.id.register_mobile);
         textEmail = (EditText) findViewById(R.id.register_email);

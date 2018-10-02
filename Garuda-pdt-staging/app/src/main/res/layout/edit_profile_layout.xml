@@ -20,46 +20,59 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
             <LinearLayout
-                android:layout_width="@dimen/d300"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/d30"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="@dimen/d120"
+                    android:layout_height="@dimen/d120"
+                    android:src="@drawable/ic_avatar"
+                    android:layout_marginVertical="@dimen/d15"/>
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/d40"
+                    android:layout_height="wrap_content"
                     android:id="@+id/register_name"
                     android:hint="Nama Lengkap"
                     android:maxLength="25"
-                    android:textSize="@dimen/s12"/>
+                    android:textSize="@dimen/s14"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/d15"/>
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/d40"
+                    android:layout_height="wrap_content"
                     android:hint="Nomor Handphone"
                     android:id="@+id/register_mobile"
                     android:enabled="false"
-                    android:layout_marginTop="@dimen/d20"
-                    android:textSize="@dimen/s12"/>
+                    android:textSize="@dimen/s14"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/d15"/>
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/d40"
-                    android:layout_marginTop="@dimen/d20"
+                    android:layout_height="wrap_content"
                     android:id="@+id/register_email"
                     android:hint="Email"
                     android:enabled="false"
-                    android:textSize="@dimen/s12"/>
+                    android:textSize="@dimen/s14"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/d15"/>
 
 
             </LinearLayout>
 
             <Button
-                android:layout_width="@dimen/d150"
-                android:layout_height="@dimen/d40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/d40"
-                android:background="@drawable/green_button"
+                android:background="@drawable/border_round_blue_gradient"
                 android:textColor="@color/white"
                 android:id="@+id/process_register"
+                android:layout_margin="@dimen/d15"
                 android:text="selesai"/>
         </LinearLayout>
     </LinearLayout>

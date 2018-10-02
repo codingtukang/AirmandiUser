@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -149,7 +150,7 @@ public class RecyMerchantPayShopAdapter extends RecyclerView.Adapter<RecyclerVie
         private TextView merchantName;
         private TextView merchantLocation;
         private TextView merchantCountry;
-        private LinearLayout btnDetailMerchant;
+        private RelativeLayout btnDetailMerchant;
         private ImageView imgPremium;
         private ImageView imgInstant;
 
@@ -163,7 +164,7 @@ public class RecyMerchantPayShopAdapter extends RecyclerView.Adapter<RecyclerVie
             merchantName = (TextView) view.findViewById(R.id.rowMerchant_merchantName);
             merchantLocation = (TextView) view.findViewById(R.id.rowMerchant_merchantLocation);
             merchantCountry = (TextView) view.findViewById(R.id.rowMerchant_merchantCountry);
-            btnDetailMerchant = (LinearLayout) view.findViewById(R.id.rowMerchant_wrapper);
+            btnDetailMerchant = (RelativeLayout) view.findViewById(R.id.rowMerchant_wrapper);
             imgPremium = (ImageView) view.findViewById(R.id.badge_premium);
             imgInstant = (ImageView) view.findViewById(R.id.badge_instant);
             merchantImage = (CircularImageView) view.findViewById(R.id.merchant_image);

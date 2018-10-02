@@ -1,6 +1,7 @@
 package com.pasyappagent.pasy.modul.home;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -16,7 +17,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -25,8 +28,12 @@ import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.android.gms.vision.text.Line;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.jakewharton.rxbinding.view.RxView;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.OnClickListener;
+import com.orhanobut.dialogplus.ViewHolder;
 import com.pasyappagent.pasy.BaseActivity;
 import com.pasyappagent.pasy.PasyAgentApplication;
 import com.pasyappagent.pasy.R;
@@ -42,6 +49,8 @@ import com.pasyappagent.pasy.modul.chat.ChatActivity;
 import com.pasyappagent.pasy.modul.checkpasscode.CheckPasscodeActivity;
 import com.pasyappagent.pasy.modul.home.transaction.AllTransactionFragment;
 import com.pasyappagent.pasy.modul.home.transaction.TransactionFragment;
+import com.pasyappagent.pasy.modul.merchant.merchantlist.MerchantListActivity;
+import com.pasyappagent.pasy.modul.purchase.PurchaseActivity;
 import com.pasyappagent.pasy.modul.register.otp.OtpActivity;
 import com.pasyappagent.pasy.modul.register.passcode.PasscodeActivity;
 import com.pasyappagent.pasy.modul.scanqr.ScanQRActivity;
@@ -87,6 +96,27 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
     private FloatingActionButton tarikSaldoFabMenu;
     private FloatingActionButton undangTemanFabMenu;
 
+    //Payment & Promo Menu Container
+    private RelativeLayout menuContainer;
+    private View cancelMenuButtonContainer;
+
+    //Payment Button
+    private LinearLayout purchaseData;
+    private LinearLayout purchasePulsa;
+    private LinearLayout purchasePasca;
+    private LinearLayout purchasePDAM;
+    private LinearLayout purchaseListrik;
+    private LinearLayout purchaseBpjs;
+    private LinearLayout registerBpjs;
+    private LinearLayout paymentTv;
+    private LinearLayout paymentAsuransi;
+    private LinearLayout paymentCicilan;
+    private LinearLayout paymentInternet;
+    private LinearLayout paymentParking;
+    private LinearLayout merchant;
+
+    private Context mContext;
+
 
     @Override
     protected int getLayoutResourceId() {
@@ -95,6 +125,8 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
 
     @Override
     protected void setContentViewOnChild() {
+        mContext = this;
+
         scan = (ImageView) findViewById(R.id.scan_barcode);
         bayar = (ImageView) findViewById(R.id.bayar);
 
@@ -146,6 +178,104 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
         });
 
         initFabMenu();
+        initPaymentMenu();
+    }
+
+    @Override
+    protected void menuButtonPressed() {
+        super.menuButtonPressed();
+        if(menuContainer.getVisibility()==View.VISIBLE){
+            menuContainer.setVisibility(View.GONE);
+        }else {
+            menuContainer.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void initPaymentMenu(){
+        menuContainer = (RelativeLayout) findViewById(R.id.menuContainer);
+        cancelMenuButtonContainer = (View) findViewById(R.id.cancelMenuButtonContainer);
+        cancelMenuButtonContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                menuButtonPressed();
+            }
+        });
+
+        purchaseData = (LinearLayout) findViewById(R.id.purchase_data);
+        purchaseData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPurchaseActivity(Constant.INTERNET_DATA);
+            }
+        });
+
+        purchasePulsa = (LinearLayout) findViewById(R.id.purchase_pulsa);
+        purchasePulsa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPurchaseActivity(Constant.PULSA_HANDPHONE);
+            }
+        });
+        //purchasePasca = (LinearLayout) findViewById(R.id.purchase_pasca);
+        purchasePDAM = (LinearLayout) findViewById(R.id.purchase_pdam);
+        purchasePDAM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPurchaseActivity(Constant.PDAM);
+            }
+        });
+        purchaseListrik = (LinearLayout) findViewById(R.id.purchase_listrik);
+        purchaseListrik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showMenuListrik();
+            }
+        });
+
+        purchaseBpjs = (LinearLayout) findViewById(R.id.purchase_bpjs);
+        purchaseBpjs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPurchaseActivity(Constant.BPJS_KESEHATAN);
+            }
+        });
+        //registerBpjs = (LinearLayout) findViewById(R.id.register_bpjs);
+        paymentTv = (LinearLayout) findViewById(R.id.payment_tv_internet);
+        paymentTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPurchaseActivity(Constant.TV_INTERNET);
+            }
+        });
+        paymentCicilan = (LinearLayout) findViewById(R.id.payment_cicilan);
+        paymentCicilan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPurchaseActivity(Constant.CICILAN);
+            }
+        });
+        paymentAsuransi = (LinearLayout) findViewById(R.id.payment_asuransi);
+        paymentAsuransi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPurchaseActivity(Constant.ASURANSI);
+            }
+        });
+        merchant = (LinearLayout) findViewById(R.id.payment_merchant);
+        merchant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, MerchantListActivity.class));
+            }
+        });
+        paymentInternet = (LinearLayout) findViewById(R.id.payment_internet);
+        paymentInternet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPurchaseActivity(Constant.INTERNET);
+            }
+        });
+        //paymentParking = (LinearLayout) findViewById(R.id.payment_parking);
     }
 
     private void initFabMenu(){
@@ -267,6 +397,47 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
             }
         }
     }
+
+    private void gotoPurchaseActivity(int position) {
+        Intent intent = new Intent(mContext, PurchaseActivity.class);
+        intent.putExtra(Constant.POSITION, position);
+        startActivity(intent);
+    }
+
+    private void showMenuListrik() {
+        DialogPlus dialog = DialogPlus.newDialog(this)
+                .setContentHolder(new ViewHolder(R.layout.content_dialog))
+                .setCancelable(true)
+                .setGravity(Gravity.BOTTOM)
+                .setExpanded(false)
+                .setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(DialogPlus dialog, View view) {
+                        //if (isAdded()) {
+                            Intent intent = new Intent(mContext, PurchaseActivity.class);
+                            switch (view.getId()) {
+                                case R.id.token_pln:
+                                    intent.putExtra(Constant.POSITION, Constant.LISTRIK);
+                                    intent.putExtra(PurchaseActivity.TYPE_PLN, PurchaseActivity.TOKEN_PLN);
+                                    startActivity(intent);
+                                    break;
+                                case R.id.tagihan_pln:
+                                    intent.putExtra(Constant.POSITION, Constant.LISTRIK);
+                                    intent.putExtra(PurchaseActivity.TYPE_PLN, PurchaseActivity.BAYAR_PLN);
+                                    startActivity(intent);
+                                    break;
+                            }
+                            dialog.dismiss();
+                        //}
+
+                    }
+                })
+                .setContentHeight(ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setOverlayBackgroundResource(R.color.starDust_opacity_90)
+                .create();
+        dialog.show();
+    }
+
 
 
 }

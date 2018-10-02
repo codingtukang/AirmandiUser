@@ -70,7 +70,7 @@ public abstract class BaseActivity extends AppCompatActivity{
     protected SlidingMenu mSlidingMenu;
     protected static CustomProgressBar progressBar = new CustomProgressBar();
     protected TextView changePassode;
-    private ImageView promo;
+    private ImageView profile;
     private Timer timer;
     private Context context;
 
@@ -104,26 +104,31 @@ public abstract class BaseActivity extends AppCompatActivity{
         menuBtn = (ImageView) findViewById(R.id.hometoolbar_imgBtnMenu);
         toolbarTitle = (TextView) findViewById(R.id.hometoolbar_title);
         imageHeader = (ImageView) findViewById(R.id.hometoolbar_logo);
-        promo = (ImageView) findViewById(R.id.promo);
+        profile = (ImageView) findViewById(R.id.profile);
 //        setSlidingMenu(this);
 
         RxView.clicks(menuBtn).subscribe(new Action1<Void>() {
             @Override
             public void call(Void aVoid) {
-                if (mSlidingMenu.isMenuShowing()) {
-                    mSlidingMenu.toggle();
-                } else {
-                    mSlidingMenu.showMenu(true);
-                }
+//                if (mSlidingMenu.isMenuShowing()) {
+//                    mSlidingMenu.toggle();
+//                } else {
+//                    mSlidingMenu.showMenu(true);
+//                }
+                menuButtonPressed();
             }
         });
 
-        RxView.clicks(promo).subscribe(new Action1<Void>() {
+        RxView.clicks(profile).subscribe(new Action1<Void>() {
             @Override
             public void call(Void aVoid) {
-                startActivity(new Intent(getApplicationContext(), PromoActivity.class));
+                startActivity(new Intent(getApplicationContext(), EditProfileActivity.class));
             }
         });
+    }
+
+    protected void menuButtonPressed(){
+
     }
 
     protected void setSlidingMenu(Context context) {
@@ -241,8 +246,8 @@ public abstract class BaseActivity extends AppCompatActivity{
 
     }
 
-    protected void hidePromo() {
-        promo.setVisibility(View.GONE);
+    protected void hideProfile() {
+        profile.setVisibility(View.GONE);
     }
 
     protected void setToolbarTitle(String title) {
@@ -252,7 +257,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         toolbarTitle.setText(title);
         toolbarTitle.setTextColor(getResources().getColor(R.color.black));
         imageHeader.setVisibility(View.GONE);
-        promo.setVisibility(View.GONE);
+        profile.setVisibility(View.GONE);
         header.setBackgroundColor(getResources().getColor(R.color.white));
     }
 

@@ -71,7 +71,7 @@ public class PromoActivity extends BaseActivity {
             mViewPager.setCurrentItem(1);
         }
 
-        hidePromo();
+        hideProfile();
         menuBtn.setVisibility(View.GONE);
         backBtn.setVisibility(View.VISIBLE);
         backBtn.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.back_button));

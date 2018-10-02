@@ -18,6 +18,8 @@ import com.bumptech.glide.request.target.Target;
 import com.pasyappagent.pasy.R;
 import com.pasyappagent.pasy.component.network.gson.GPromo;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,10 +46,11 @@ public class RecyPromoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         final GPromo promo = promos.get(position);
 
         ((ViewHolder) holder).titlePromo.setText(Html.fromHtml(promo.title));
+        ((ViewHolder) holder).infoPromo.setText(Html.fromHtml(promo.content));
         if (promo.image != null) {
             Glide.with(((ViewHolder) holder).itemView.getContext())
                     .load(promo.image.base_url + "/" + promo.image.path)
-                    .fitCenter()
+                    .centerCrop()
                     .listener(new RequestListener<String, GlideDrawable>() {
                         @Override
                         public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
@@ -88,6 +91,7 @@ public class RecyPromoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView titlePromo;
+        private TextView infoPromo;
         private ImageView imagePromo;
         private LinearLayout container;
         private ProgressBar loading;
@@ -97,6 +101,7 @@ public class RecyPromoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             super(itemView);
             imagePromo = (ImageView) itemView.findViewById(R.id.image_promo);
             titlePromo = (TextView) itemView.findViewById(R.id.title_promo);
+            infoPromo = (TextView) itemView.findViewById(R.id.info_promo);
             container = (LinearLayout) itemView.findViewById(R.id.container_promo);
             loading = (ProgressBar) itemView.findViewById(R.id.progressBar);
             containerImage = (RelativeLayout) itemView.findViewById(R.id.container_image_promo);

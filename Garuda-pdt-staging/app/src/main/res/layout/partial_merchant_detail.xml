@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@color/black">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,33 +18,115 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:id="@+id/container_merchant_header"
-            android:layout_height="200dp">
-            <LinearLayout
+            android:layout_height="@dimen/d200">
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="20dp">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingTop="0dp"
-                    android:id="@+id/layout_image_user"
-                    android:background="@drawable/default_layout_merchant"
-                    />
-            </LinearLayout>
+                android:paddingTop="0dp"
+                android:id="@+id/layout_image_user"
+                android:background="@drawable/default_layout_merchant"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d300"
+                android:background="@drawable/bg_black_gradient_transparent"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_alignParentBottom="true">
+                <com.mikhaellopez.circularimageview.CircularImageView
 
-            <com.mikhaellopez.circularimageview.CircularImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/frgMerchantDetail_profilePicture"
-                android:layout_width="@dimen/d110"
-                android:layout_height="@dimen/d110"
-                android:src="@drawable/default_image_merchant"
-                app:civ_border_color="@color/silver_light"
-                app:civ_shadow_color="@color/clear"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                app:civ_border_width="4dp"
-                app:civ_shadow="true"
-                app:civ_shadow_radius="10"/>
+                    android:id="@+id/frgMerchantDetail_profilePicture"
+                    android:layout_width="@dimen/d110"
+                    android:layout_height="@dimen/d110"
+                    android:src="@drawable/default_image_merchant"
+                    app:civ_border_color="@color/silver_light"
+                    app:civ_shadow_color="@color/clear"
+                    app:civ_border_width="1dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="10"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                            android:id="@+id/frgMerchantDetail_merchantName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="Merchant Name"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/s20"/>
+                        <ImageView
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:visibility="gone"
+                            android:id="@+id/badge_premium"
+                            android:layout_toRightOf="@+id/frgMerchantDetail_merchantName"
+                            android:src="@drawable/premium_merchant_badge"/>
+                    </RelativeLayout>
+                    <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/type_merchant"
+                        android:text="Offline Shop, Online Shop"
+                        android:textColor="@color/white"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/d5">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:id="@+id/direction_btn">
+                            <ImageView
+                                android:layout_width="@dimen/d32"
+                                android:layout_height="@dimen/d32"
+                                android:src="@drawable/icon_location_pin"
+                                android:backgroundTint="@color/white"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/whatsapp"
+                            android:layout_marginLeft="@dimen/d10">
+                            <ImageView
+                                android:layout_width="@dimen/d32"
+                                android:layout_height="@dimen/d32"
+                                android:src="@drawable/icon_whatsapp"
+                                android:backgroundTint="@color/white"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:id="@+id/instagram"
+                            android:layout_marginLeft="@dimen/d10">
+                            <ImageView
+                                android:layout_width="@dimen/d32"
+                                android:layout_height="@dimen/d32"
+                                android:src="@drawable/icon_instagram"
+                                android:backgroundTint="@color/white"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
 
 
 
@@ -57,36 +141,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:gravity="center_horizontal"
                 android:padding="7dp"
                 android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
-                        android:id="@+id/frgMerchantDetail_merchantName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:singleLine="true"
-                        android:textColor="@color/black"
-                        android:textSize="23sp"/>
-
-                    <ImageView
-                        android:layout_marginLeft="10dp"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:visibility="gone"
-                        android:id="@+id/badge_premium"
-                        android:layout_toRightOf="@+id/frgMerchantDetail_merchantName"
-                        android:src="@drawable/premium_merchant_badge"/>
-                </RelativeLayout>
-
-
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -109,24 +165,11 @@
                 </LinearLayout>
                 <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
                     android:id="@+id/frgMerchantDetail_merchantDescription"
-                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center"
+                    android:text="Description"
                     android:textSize="@dimen/s12"
-                    android:textColor="@color/black"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/dark_gray"
-                    android:layout_marginRight="50dp"
-                    android:layout_marginLeft="50dp"
-                    android:visibility="gone"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:textColor="@color/light_gray"/>
 
                 <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                     android:layout_width="wrap_content"
@@ -138,57 +181,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/curiousBlue"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:id="@+id/direction_btn"
-                        android:padding="5dp">
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/icon_location_pin"/>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:id="@+id/whatsapp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:padding="5dp">
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/icon_whatsapp"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:id="@+id/instagram"
-                        android:padding="5dp">
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/icon_instagram"/>
-
-                    </LinearLayout>
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="150dp"
@@ -218,8 +211,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-        <View android:background="@color/starDust" android:layout_width="match_parent" android:layout_height="@dimen/d1"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -228,136 +219,102 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.5"
                 android:orientation="vertical">
                 <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NOMOR KONTAK"
-                    android:textColor="@color/DarkGray"/>
+                    android:text="NO. TELEPON"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/phone_number"
-                    android:textColor="@color/green_ligth"
-                    android:layout_marginBottom="10dp"/>
-
-                <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TIPE"
-                    android:textColor="@color/DarkGray"/>
-
-                <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/type_merchant"
-                    android:text="Offline Shop, Online Shop"
+                    android:textColor="@color/green_forest.secondary"
+                    android:text="081234567890"
                     android:layout_marginBottom="10dp"/>
 
                 <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PRODUK POPULER"
-                    android:textColor="@color/DarkGray"/>
+                    android:textColor="@color/white"
+                    android:visibility="gone"/>
 
                 <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/product_merchant"
                     android:text="Stroller, Baby Swim Suit, Baby Box"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone"/>
 
                 <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="KISARAN HARGA"
-                    android:textColor="@color/DarkGray"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/range_price"
                     android:text="Rp 50.000 - Rp 750.000"
-                    android:layout_marginBottom="10dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="vertical">
-                <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="INFO"
-                    android:textColor="@color/DarkGray"/>
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="@dimen/s12"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:visibility="gone"
                     android:layout_marginBottom="10dp">
                     <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/info_merchant"
+                        android:textColor="@color/white"
                         android:text="LINE Official : @YK23ZD"/>
                 </LinearLayout>
 
+                <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+                <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                    android:id="@+id/frgMerchantDetail_merchantNameBelow"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:text="Merchant Name"
+                    android:textColor="@color/white"/>
+
+                <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                    android:id="@+id/frgMerchantDetail_merchantDescriptionBelow"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Merchant Desscription"
+                    android:textColor="@color/white"/>
+
             </LinearLayout>
         </LinearLayout>
-
-        <View android:background="@color/starDust" android:layout_width="match_parent" android:layout_height="@dimen/d3"/>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:padding="15dp"
-            android:layout_marginBottom="10dp"
+        <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Alamat"/>
-
-            <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
-                android:id="@+id/frgMerchantDetail_merchantNameBelow"
-                android:layout_width="match_parent"
-                android:visibility="invisible"
-                android:layout_height="wrap_content"
-                android:textColor="@color/charcoal"/>
-
-            <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
-                android:id="@+id/frgMerchantDetail_merchantDescriptionBelow"
-                android:layout_marginTop="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/starDust"/>
-
-        </LinearLayout>
-        <FrameLayout
-            android:layout_weight="30"
-            android:layout_marginBottom="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:text="Merchant Name"
+            android:textColor="@color/white"/>
             <fragment
                 android:id="@+id/merchant_maps"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="280dp" />
-        </FrameLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="80dp"/>
-
-
-
     </LinearLayout>
-
 </ScrollView>

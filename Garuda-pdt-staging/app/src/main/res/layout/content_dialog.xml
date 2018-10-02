@@ -2,44 +2,51 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:orientation="vertical"
-    android:padding="@dimen/s16">
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pilih salah satu layanan"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/s20"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/s16"/>
-
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="@dimen/d15">
 
-        <Button
-            android:id="@+id/tagihan_pln"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Tagihan PLN"
-            android:textColor="@color/dialogplus_black_overlay"
-            android:textSize="@dimen/s16"/>
 
-        <Button
-            android:id="@+id/token_pln"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Token PLN"
-            android:textColor="@color/dialogplus_black_overlay"
-            android:textSize="@dimen/s16"/>
+            android:text="Pilih Layanan"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/s20"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/s16"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/tagihan_pln"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tagihan PLN"
+                android:textColor="@color/white"
+                android:background="@drawable/border_round_blue_gradient"
+                android:textSize="@dimen/s14"/>
+
+            <Button
+                android:id="@+id/token_pln"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Token PLN"
+                android:textColor="@color/white"
+                android:background="@drawable/border_round_blue_gradient"
+                android:textSize="@dimen/s14"
+                android:layout_marginTop="@dimen/d15"/>
+        </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
 

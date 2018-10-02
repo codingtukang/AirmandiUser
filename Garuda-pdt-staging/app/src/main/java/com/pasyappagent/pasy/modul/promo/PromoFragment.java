@@ -57,7 +57,7 @@ public class PromoFragment extends Fragment implements PromoPresenterImpl.EventP
         mAdapter = new RecyPromoAdapter(this);
         promoList = (RecyclerView) view.findViewById(R.id.promo_list);
         promoList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        promoList.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+        //promoList.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
         promoList.setAdapter(mAdapter);
     }
 

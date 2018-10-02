@@ -2,14 +2,12 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_margin="5dp"
+    android:layout_margin="@dimen/d10"
     android:background="@android:color/white"
     android:elevation="4dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/rowMerchant_wrapper"
-        android:background="@drawable/selector_background_white_grey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -18,20 +16,21 @@
             android:id="@+id/rowMerchant_image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:background="@android:color/white"
             android:scaleType="fitCenter"
             android:src="@drawable/default_image_merchant"/>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d200"
+            android:layout_alignBottom="@+id/rowMerchant_image"
+            android:background="@drawable/bg_black_gradient_transparent"></View>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginRight="6dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="6dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_alignBottom="@+id/rowMerchant_image"
+            android:padding="@dimen/d15">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,15 +43,16 @@
                     <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
                         android:id="@+id/rowMerchant_merchantName"
                         android:singleLine="true"
-                        android:layout_marginLeft="2dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:textColor="@color/denim"
-                        android:textSize="14sp"/>
+                        android:textColor="@color/white"
+                        android:text="Merchant Name"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/s16"/>
+
 
                     <LinearLayout
-                        android:layout_marginTop="2dp"
                         android:layout_width="match_parent"
                         android:gravity="center_vertical"
                         android:layout_height="wrap_content"
@@ -68,11 +68,13 @@
                             android:id="@+id/rowMerchant_merchantLocation"
                             android:singleLine="true"
                             android:layout_marginLeft="1dp"
+                            android:text="Merchant Location"
+                            android:visibility="gone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:textColor="@color/starDust"
-                            android:textSize="12sp"/>
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/s15"/>
 
                         <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
                             android:id="@+id/rowMerchant_merchantCountry"
@@ -83,6 +85,7 @@
                             android:visibility="gone"
                             android:gravity="center_horizontal"
                             android:textColor="@color/starDust"
+                            android:text="Merchant Country"
                             android:textSize="12sp"/>
 
                     </LinearLayout>
@@ -107,11 +110,16 @@
                         android:src="@drawable/badge_instant_merchant"/>
                 </LinearLayout>
             </LinearLayout>
-
+            <View
+                android:layout_width="@dimen/d100"
+                android:layout_height="@dimen/d2"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="@dimen/d10"
+                />
 
         </LinearLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </android.support.v7.widget.CardView>

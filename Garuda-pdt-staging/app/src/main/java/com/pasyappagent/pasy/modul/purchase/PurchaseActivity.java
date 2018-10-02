@@ -450,8 +450,8 @@ public class PurchaseActivity extends BaseActivity implements CommonInterface, P
                 mFirebaseAnalytics.setUserProperty("Page", "purchase Listrik");
                 break;
             case Constant.PULSA_HANDPHONE:
-                setToolbarTitle("Pulsa Handphone");
-                no.setHint("Nomor Handphone");
+                setToolbarTitle("PULSA");
+                no.setHint("Ex : 081234567890");
                 nextBtn.setText("ISI PULSA");
                 isUsingInquiry = false;
                 quotaAdapter = new RecyPurchaseQuotaAdapter(false);
