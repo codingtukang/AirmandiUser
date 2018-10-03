@@ -50,6 +50,7 @@ import com.pasyappagent.pasy.modul.checkpasscode.CheckPasscodeActivity;
 import com.pasyappagent.pasy.modul.home.transaction.AllTransactionFragment;
 import com.pasyappagent.pasy.modul.home.transaction.TransactionFragment;
 import com.pasyappagent.pasy.modul.merchant.merchantlist.MerchantListActivity;
+import com.pasyappagent.pasy.modul.promo.PromoActivity;
 import com.pasyappagent.pasy.modul.purchase.PurchaseActivity;
 import com.pasyappagent.pasy.modul.register.otp.OtpActivity;
 import com.pasyappagent.pasy.modul.register.passcode.PasscodeActivity;
@@ -99,6 +100,7 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
     //Payment & Promo Menu Container
     private RelativeLayout menuContainer;
     private View cancelMenuButtonContainer;
+    private LinearLayout promoButton;
 
     //Payment Button
     private LinearLayout purchaseData;
@@ -198,6 +200,16 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
             @Override
             public void onClick(View view) {
                 menuButtonPressed();
+            }
+        });
+
+        promoButton = (LinearLayout) findViewById(R.id.promo);
+        promoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, PromoActivity.class);
+                //intent.putExtra("isDeals", true);
+                startActivity(intent);
             }
         });
 
@@ -326,6 +338,7 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
         super.onResume();
         countChat = 0;
         mPresenter.getDataHomeActivity();
+        menuContainer.setVisibility(View.GONE);
 //        notif.setVisibility(View.GONE);
     }
 

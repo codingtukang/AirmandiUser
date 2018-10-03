@@ -14,19 +14,22 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_margin="@dimen/d10"
-        android:background="@drawable/border_round_light_gray">
+        android:background="@drawable/border_round_light_gray"
+        android:focusableInTouchMode="true">
         <ImageView
             android:layout_width="@dimen/d25"
             android:layout_height="@dimen/d25"
             android:src="@drawable/ic_magni"
-            android:layout_margin="@dimen/d10"/>
+            android:layout_margin="@dimen/d10"
+            />
         <EditText
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:hint="Cari"
             android:id="@+id/search_input"
-            android:background="@color/transparent"/>
+            android:background="@color/transparent"
+            />
         <ImageView
             android:layout_width="@dimen/d25"
             android:layout_height="@dimen/d25"

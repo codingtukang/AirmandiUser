@@ -55,7 +55,7 @@ public class MerchantListActivity extends BaseActivity implements CommonInterfac
         });
         list.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         list.setAdapter(mAdapter);
-        list.setFocusable(false);
+        //list.setFocusable(false);
 
 //        RxTextView.textChanges(inputSearch).skip(2).subscribe(new Action1<CharSequence>() {
 //            @Override

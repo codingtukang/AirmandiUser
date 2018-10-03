@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:id="@+id/container_merchant_header"
             android:layout_height="@dimen/d200">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -26,6 +27,28 @@
                 android:id="@+id/layout_image_user"
                 android:background="@drawable/default_layout_merchant"
                 />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:padding="@dimen/d10"
+                android:layout_marginTop="@dimen/d5">
+                <ImageView
+                    android:layout_width="@dimen/d30"
+                    android:layout_height="@dimen/d30"
+                    android:layout_margin="@dimen/d5"
+                    android:src="@drawable/ic_call"
+                    android:background="@drawable/border_circle_full_black"
+                    android:padding="@dimen/d7"/>
+                <ImageView
+                    android:layout_width="@dimen/d30"
+                    android:layout_height="@dimen/d30"
+                    android:layout_margin="@dimen/d5"
+                    android:src="@drawable/ic_share"
+                    android:background="@drawable/border_circle_full_black"
+                    android:padding="@dimen/d7"/>
+            </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/d300"
@@ -39,14 +62,16 @@
                 <com.mikhaellopez.circularimageview.CircularImageView
 
                     android:id="@+id/frgMerchantDetail_profilePicture"
-                    android:layout_width="@dimen/d110"
-                    android:layout_height="@dimen/d110"
+                    android:layout_width="@dimen/d70"
+                    android:layout_height="@dimen/d70"
                     android:src="@drawable/default_image_merchant"
                     app:civ_border_color="@color/silver_light"
                     app:civ_shadow_color="@color/clear"
-                    app:civ_border_width="1dp"
+                    app:civ_border_width="0dp"
                     app:civ_shadow="true"
-                    app:civ_shadow_radius="10"/>
+                    app:civ_shadow_radius="10"
+                    android:padding="@dimen/d15"
+                    android:layout_marginRight="@dimen/d10"/>
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -59,7 +84,6 @@
                             android:id="@+id/frgMerchantDetail_merchantName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:singleLine="true"
                             android:text="Merchant Name"
                             android:textStyle="bold"
                             android:textColor="@color/white"
@@ -79,53 +103,16 @@
                         android:id="@+id/type_merchant"
                         android:text="Offline Shop, Online Shop"
                         android:textColor="@color/white"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="@dimen/d5">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_gravity="center"
-                            android:id="@+id/direction_btn">
-                            <ImageView
-                                android:layout_width="@dimen/d32"
-                                android:layout_height="@dimen/d32"
-                                android:src="@drawable/icon_location_pin"
-                                android:backgroundTint="@color/white"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:id="@+id/whatsapp"
-                            android:layout_marginLeft="@dimen/d10">
-                            <ImageView
-                                android:layout_width="@dimen/d32"
-                                android:layout_height="@dimen/d32"
-                                android:src="@drawable/icon_whatsapp"
-                                android:backgroundTint="@color/white"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:id="@+id/instagram"
-                            android:layout_marginLeft="@dimen/d10">
-                            <ImageView
-                                android:layout_width="@dimen/d32"
-                                android:layout_height="@dimen/d32"
-                                android:src="@drawable/icon_instagram"
-                                android:backgroundTint="@color/white"/>
-
-                        </LinearLayout>
-                    </LinearLayout>
                 </LinearLayout>
+                <ImageView
+                    android:id="@+id/bayarButton"
+                    android:layout_width="@dimen/d50"
+                    android:layout_height="@dimen/d50"
+                    android:src="@drawable/ic_qr"
+                    android:tint="@color/white"
+                    android:padding="@dimen/d15"
+                    android:layout_margin="@dimen/d15"
+                    android:background="@drawable/border_circle_full_blue"/>
             </LinearLayout>
 
 
@@ -141,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:padding="7dp"
+                android:padding="@dimen/d15"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -167,7 +154,7 @@
                     android:id="@+id/frgMerchantDetail_merchantDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Description"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra placerat augue non consequat. Maecenas dui neque, gravida quis metus ut, convallis hendrerit tellus. Maecenas eget laoreet purus. Donec odio nulla, euismod vitae diam ac, facilisis molestie sapien. Suspendisse neque ex, rutrum in aliquam non, vehicula eu nisi. Suspendisse vel arcu justo. Pellentesque ipsum arcu, posuere ac velit a, vestibulum blandit nulla. Nulla tempor magna eget neque feugiat, eu vestibulum metus lacinia. Maecenas porttitor lorem ut accumsan mattis. Praesent bibendum mi massa, et lobortis lacus luctus non. Integer eleifend ex quis sodales finibus."
                     android:textSize="@dimen/s12"
                     android:textColor="@color/light_gray"/>
 
@@ -215,7 +202,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="@dimen/d15">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

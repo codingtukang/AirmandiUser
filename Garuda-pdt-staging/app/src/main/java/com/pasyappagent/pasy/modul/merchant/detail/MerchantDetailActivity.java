@@ -1,9 +1,11 @@
 package com.pasyappagent.pasy.modul.merchant.detail;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.media.Image;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -37,7 +39,10 @@ import com.pasyappagent.pasy.component.network.gson.GMerchant;
 import com.pasyappagent.pasy.component.util.Constant;
 import com.pasyappagent.pasy.component.util.MethodUtil;
 import com.pasyappagent.pasy.modul.CommonInterface;
+import com.pasyappagent.pasy.modul.bayar.BayarActivity;
+import com.pasyappagent.pasy.modul.home.HomePageActivity;
 import com.pasyappagent.pasy.modul.merchant.merchantlist.MerchantListPresenterImpl;
+import com.pasyappagent.pasy.modul.scanqr.ScanQRActivity;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -63,18 +68,19 @@ public class MerchantDetailActivity extends BaseActivity implements CommonInterf
     private Button mBtnNextPayment;
     private LinearLayout containerCall;
     private TextView mPhoneNumber;
-    private LinearLayout mDirection;
+    //private LinearLayout mDirection;
     private TextView popularityText;
     private ImageView badgeImage;
     private String merchantCode;
-    private LinearLayout instagram;
-    private LinearLayout whatsapp;
+    //private LinearLayout instagram;
+    //private LinearLayout whatsapp;
     private TextView productMerchant;
     private TextView typeMerchant;
     private TextView infoMerchant;
     private TextView rangePrice;
     private ImageView layoutMerchant;
     private GMerchant merchantData;
+    private ImageView bayarButton;
 
     @Override
 
@@ -196,11 +202,11 @@ public class MerchantDetailActivity extends BaseActivity implements CommonInterf
         mMerchantAddress = (TextView) findViewById(R.id.frgMerchantDetail_merchantDescriptionBelow);
         containerCall = (LinearLayout) findViewById(R.id.container_all);
         mPhoneNumber = (TextView) findViewById(R.id.phone_number);
-        mDirection = (LinearLayout) findViewById(R.id.direction_btn);
+        //mDirection = (LinearLayout) findViewById(R.id.direction_btn);
         popularityText = (TextView) findViewById(R.id.popularity_text);
         badgeImage = (ImageView) findViewById(R.id.badge_premium);
-        instagram = (LinearLayout) findViewById(R.id.instagram);
-        whatsapp = (LinearLayout) findViewById(R.id.whatsapp);
+        //instagram = (LinearLayout) findViewById(R.id.instagram);
+        //whatsapp = (LinearLayout) findViewById(R.id.whatsapp);
         productMerchant = (TextView) findViewById(R.id.product_merchant);
         typeMerchant = (TextView) findViewById(R.id.type_merchant);
         infoMerchant = (TextView) findViewById(R.id.info_merchant);
@@ -209,6 +215,14 @@ public class MerchantDetailActivity extends BaseActivity implements CommonInterf
 //        mBtnEmail = (ImageView) view.findViewById(R.id.frgMerchantDetail_btnMail);
 //        mBtnPhone = (ImageView) view.findViewById(R.id.frgMerchantDetail_btnPhone);
 //        mBtnChat = (ImageView) view.findViewById(R.id.frgMerchantDetail_btnChat);
+        bayarButton = (ImageView) findViewById(R.id.bayarButton);
+        bayarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MerchantDetailActivity.this,
+                        ScanQRActivity.class));
+            }
+        });
     }
 
     private void initEvent() {
@@ -228,6 +242,7 @@ public class MerchantDetailActivity extends BaseActivity implements CommonInterf
         });
 
         RxView.clicks(containerCall).subscribe(new Action1<Void>() {
+            @SuppressLint("NewApi")
             @Override
             public void call(Void aVoid) {
                 final String phone = mPhoneNumber.getText().toString();
@@ -237,52 +252,52 @@ public class MerchantDetailActivity extends BaseActivity implements CommonInterf
             }
         });
 
-        RxView.clicks(whatsapp).subscribe(new Action1<Void>() {
-            @Override
-            public void call(Void aVoid) {
-                try {
-                    String phone = mPhoneNumber.getText().toString();
-                    Character firstChar = phone.charAt(0);
-                    if (firstChar.toString().equalsIgnoreCase("0")) {
-                        phone = "62" + phone.substring(1);
-                    }
-                    String url = "https://api.whatsapp.com/send?phone=" + phone;
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(url));
-                    startActivity(i);
-                } catch (Exception e) {
-                    MethodUtil.showCustomToast(MerchantDetailActivity.this, "Gagal membuka Whatsapp", R.drawable.ic_error_login);
-                    e.printStackTrace();
-                }
-            }
-        });
+//        RxView.clicks(whatsapp).subscribe(new Action1<Void>() {
+//            @Override
+//            public void call(Void aVoid) {
+//                try {
+//                    String phone = mPhoneNumber.getText().toString();
+//                    Character firstChar = phone.charAt(0);
+//                    if (firstChar.toString().equalsIgnoreCase("0")) {
+//                        phone = "62" + phone.substring(1);
+//                    }
+//                    String url = "https://api.whatsapp.com/send?phone=" + phone;
+//                    Intent i = new Intent(Intent.ACTION_VIEW);
+//                    i.setData(Uri.parse(url));
+//                    startActivity(i);
+//                } catch (Exception e) {
+//                    MethodUtil.showCustomToast(MerchantDetailActivity.this, "Gagal membuka Whatsapp", R.drawable.ic_error_login);
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
 
-        RxView.clicks(instagram).subscribe(new Action1<Void>() {
-            @Override
-            public void call(Void aVoid) {
-//                String instagramUser = mPresenter.getMerchant().getWebsite();
-//                Intent intent = new Intent(getActivity(), InstagramWebViewActivity.class);
-//                intent.putExtra("instagram", instagramUser);
+//        RxView.clicks(instagram).subscribe(new Action1<Void>() {
+//            @Override
+//            public void call(Void aVoid) {
+////                String instagramUser = mPresenter.getMerchant().getWebsite();
+////                Intent intent = new Intent(getActivity(), InstagramWebViewActivity.class);
+////                intent.putExtra("instagram", instagramUser);
+////                startActivity(intent);
+//                Toast.makeText(getBaseContext(), "Under Construction", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+//        RxView.clicks(mDirection).subscribe(new Action1<Void>() {
+//            @Override
+//            public void call(Void aVoid) {
+//                Double lat = 0.0;
+//                Double lon = 0.0;
+//                if (merchantData != null) {
+//                    lat = Double.parseDouble(merchantData.gmap_lat);
+//                    lon = Double.parseDouble(merchantData.gmap_long);
+//                }
+//                String url = String.format("http://maps.google.com/maps?daddr=%s,%s", lat + "", lon + "");
+//                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+//                        Uri.parse(url));
 //                startActivity(intent);
-                Toast.makeText(getBaseContext(), "Under Construction", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        RxView.clicks(mDirection).subscribe(new Action1<Void>() {
-            @Override
-            public void call(Void aVoid) {
-                Double lat = 0.0;
-                Double lon = 0.0;
-                if (merchantData != null) {
-                    lat = Double.parseDouble(merchantData.gmap_lat);
-                    lon = Double.parseDouble(merchantData.gmap_long);
-                }
-                String url = String.format("http://maps.google.com/maps?daddr=%s,%s", lat + "", lon + "");
-                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                        Uri.parse(url));
-                startActivity(intent);
-            }
-        });
+//            }
+//        });
     }
 
     @Override
