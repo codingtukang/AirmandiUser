@@ -25,6 +25,14 @@
                 android:visibility="gone"/>
 
             <ImageView
+                android:id="@+id/hometoolbar_imgBtnClose"
+                android:src="@drawable/close_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/d17"
+                android:visibility="gone"/>
+
+            <ImageView
                 android:id="@+id/hometoolbar_imgBtnMenu"
                 android:src="@drawable/ic_menu"
                 android:layout_width="wrap_content"

@@ -86,12 +86,11 @@
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/transferSaldoFabMenu"
+            style="@style/MenuButtonsSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_label="Topup Saldo"
             android:src="@drawable/ic_transfer_saldo"
-            style="@style/MenuButtonsSmall"
-            />
+            fab:fab_label="Topup Saldo" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/requestSaldoFabMenu"

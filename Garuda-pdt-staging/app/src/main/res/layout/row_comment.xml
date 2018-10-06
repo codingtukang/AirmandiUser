@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/d15"
+    android:orientation="vertical">
+
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/cmt_feed_row_swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Bottom View Start-->
+        <FrameLayout
+            android:id="@+id/cmt_feed_row_bottom"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@color/red_alert"
+            android:weightSum="1">
+            <!--What you want to show-->
+            <LinearLayout
+                android:id="@+id/row_feed_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_trash" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Hapus" />
+            </LinearLayout>
+        </FrameLayout>
+        <!-- Bottom View End-->
+
+        <!-- Surface View Start -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/d40"
+                android:layout_height="@dimen/d50"
+                android:layout_marginRight="@dimen/d10"
+                android:src="@drawable/dummy_avatar" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/comment_content_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Muhammad Fariz"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/s15" />
+
+                <TextView
+                    android:id="@+id/comment_time_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10 menit lalu"
+                    android:textColor="@color/gray.primary"
+                    android:textSize="@dimen/s12" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Surface View End -->
+    </com.daimajia.swipe.SwipeLayout>
+
+
+</LinearLayout>

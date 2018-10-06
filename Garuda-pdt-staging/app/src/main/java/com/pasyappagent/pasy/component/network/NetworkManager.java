@@ -168,9 +168,7 @@ public class NetworkManager {
             }
         });
 
-        ConnectionSpec spec = new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)
-                .tlsVersions(TlsVersion.TLS_1_2)
-                .allEnabledCipherSuites()
+        ConnectionSpec spec = new ConnectionSpec.Builder(ConnectionSpec.CLEARTEXT)
                 .build();
 
         httpClient.connectionSpecs(Collections.singletonList(spec));

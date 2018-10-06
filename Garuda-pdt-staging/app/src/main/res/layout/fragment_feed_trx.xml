@@ -4,11 +4,16 @@
     android:layout_height="match_parent"
     tools:context="com.pasyappagent.pasy.modul.feed.FeedTrxFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/feed_list"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/pullToRefresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+        <com.paging.listview.PagingListView
+            android:id="@+id/feed_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+        </com.paging.listview.PagingListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </FrameLayout>

@@ -148,19 +148,55 @@
                 android:layout_width="0dp"
                 android:layout_height="10dp"
                 android:layout_weight="1"/>
-            <ImageView
-                android:id="@+id/feedPagerIndicatorImage"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/indicator_tab_1"/>
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/feedPagerIndicatorImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/indicator_tab_1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@+id/feedPagerIndicatorImage"
+                    android:layout_alignRight="@+id/feedPagerIndicatorImage"
+                    android:weightSum="3"
+                    >
+
+                    <Button
+                        android:id="@+id/userTabButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/transparent" />
+
+                    <Button
+                        android:id="@+id/chatTabButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent" />
+
+                    <Button
+                        android:id="@+id/trxTabButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/transparent" />
+                </LinearLayout>
+            </RelativeLayout>
             <View
                 android:layout_width="0dp"
                 android:layout_height="10dp"
                 android:layout_weight="1"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_compose_blue"/>
+
+            <Button
+                android:id="@+id/create_post_btn"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/ic_compose_blue" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -651,10 +687,10 @@
 
     </LinearLayout>
 
-    <android.support.v4.view.ViewPager
+    <com.pasyappagent.pasy.component.ui.NonSwipeableViewPager
         android:id="@+id/feedPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-    </android.support.v4.view.ViewPager>
+    </com.pasyappagent.pasy.component.ui.NonSwipeableViewPager>
 </LinearLayout>

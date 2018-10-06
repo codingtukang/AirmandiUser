@@ -63,6 +63,7 @@ public abstract class BaseActivity extends AppCompatActivity{
     protected  static  int CHANGE_PASSCODE = 11;
     protected Toolbar toolbar;
     protected ImageView backBtn;
+    protected ImageView closeBtn;
     protected ImageView menuBtn;
     protected TextView toolbarTitle;
     protected LinearLayout header;
@@ -101,6 +102,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         header = (LinearLayout) findViewById(R.id.header);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         backBtn = (ImageView) findViewById(R.id.hometoolbar_imgBtnBack);
+        closeBtn = (ImageView) findViewById(R.id.hometoolbar_imgBtnClose);
         menuBtn = (ImageView) findViewById(R.id.hometoolbar_imgBtnMenu);
         toolbarTitle = (TextView) findViewById(R.id.hometoolbar_title);
         imageHeader = (ImageView) findViewById(R.id.hometoolbar_logo);
@@ -252,6 +254,7 @@ public abstract class BaseActivity extends AppCompatActivity{
 
     protected void setToolbarTitle(String title) {
         backBtn.setVisibility(View.VISIBLE);
+        closeBtn.setVisibility(View.GONE);
         menuBtn.setVisibility(View.GONE);
         toolbarTitle.setVisibility(View.VISIBLE);
         toolbarTitle.setText(title);
@@ -261,8 +264,22 @@ public abstract class BaseActivity extends AppCompatActivity{
         header.setBackgroundColor(getResources().getColor(R.color.white));
     }
 
+    protected void setToolbarTitleWithCloseButton(String title) {
+        backBtn.setVisibility(View.GONE);
+        closeBtn.setVisibility(View.VISIBLE);
+        menuBtn.setVisibility(View.GONE);
+        toolbarTitle.setVisibility(View.VISIBLE);
+        toolbarTitle.setText(title);
+        toolbarTitle.setTextColor(getResources().getColor(R.color.black));
+        imageHeader.setVisibility(View.GONE);
+        profile.setVisibility(View.GONE);
+        header.setBackgroundColor(getResources().getColor(R.color.white));
+    }
+
+
     protected void setToolbarLogo() {
         backBtn.setVisibility(View.GONE);
+        closeBtn.setVisibility(View.GONE);
         toolbarTitle.setVisibility(View.GONE);
         imageHeader.setVisibility(View.VISIBLE);
         header.setBackgroundColor(getResources().getColor(R.color.white));
@@ -275,6 +292,13 @@ public abstract class BaseActivity extends AppCompatActivity{
                 onBackBtnPressed();
             }
         });
+        RxView.clicks(closeBtn).subscribe(new Action1<Void>() {
+            @Override
+            public void call(Void aVoid) {
+                onBackBtnPressed();
+            }
+        });
+
     }
 
     @Override

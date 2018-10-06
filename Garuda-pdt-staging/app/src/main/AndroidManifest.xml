@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -175,6 +174,14 @@
         <activity android:name=".modul.verify.VerifyActivity"
             android:screenOrientation="portrait">
         </activity>
+
+        <activity android:name=".modul.feed.posts.CreatePostActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modul.feed.posts.PostDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modul.customer.ContactCustomerActivity"
+            android:screenOrientation="portrait"/>
+
 
         <activity android:name=".modul.deals.review.DealReviewActivity"
             android:screenOrientation="portrait">

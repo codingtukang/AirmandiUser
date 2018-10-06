@@ -47,6 +47,8 @@ import com.pasyappagent.pasy.modul.CommonInterface;
 import com.pasyappagent.pasy.modul.bayar.BayarActivity;
 import com.pasyappagent.pasy.modul.chat.ChatActivity;
 import com.pasyappagent.pasy.modul.checkpasscode.CheckPasscodeActivity;
+import com.pasyappagent.pasy.modul.customer.ContactCustomerActivity;
+import com.pasyappagent.pasy.modul.feed.posts.PostDetailActivity;
 import com.pasyappagent.pasy.modul.home.transaction.AllTransactionFragment;
 import com.pasyappagent.pasy.modul.home.transaction.TransactionFragment;
 import com.pasyappagent.pasy.modul.merchant.merchantlist.MerchantListActivity;
@@ -299,6 +301,13 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
         undangTemanFabMenu= (FloatingActionButton) findViewById(R.id.undangTemanFabMenu);
 
         transferSaldoFabMenu.setLabelText("Transfer Saldo");
+
+        transferSaldoFabMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ContactCustomerActivity.class));
+            }
+        });
     }
 
     private Runnable onTypingTimeout = new Runnable() {

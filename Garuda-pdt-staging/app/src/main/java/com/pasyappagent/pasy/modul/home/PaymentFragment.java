@@ -12,15 +12,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -32,16 +27,14 @@ import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnClickListener;
 import com.orhanobut.dialogplus.ViewHolder;
 import com.pasyappagent.pasy.R;
-import com.pasyappagent.pasy.component.adapter.RecyDealsAdapter;
 import com.pasyappagent.pasy.component.adapter.RecyFeedAdapter;
 import com.pasyappagent.pasy.component.network.gson.GAgent;
-import com.pasyappagent.pasy.component.network.gson.GFeed;
 import com.pasyappagent.pasy.component.util.Constant;
 import com.pasyappagent.pasy.component.util.MethodUtil;
 import com.pasyappagent.pasy.component.util.PreferenceManager;
-import com.pasyappagent.pasy.modul.bayar.BayarActivity;
 import com.pasyappagent.pasy.modul.baznas.BaznasActivity;
 import com.pasyappagent.pasy.modul.feed.FeedPagerAdapter;
+import com.pasyappagent.pasy.modul.feed.posts.CreatePostActivity;
 import com.pasyappagent.pasy.modul.merchant.merchantlist.MerchantListActivity;
 import com.pasyappagent.pasy.modul.promo.PromoActivity;
 import com.pasyappagent.pasy.modul.purchase.PurchaseActivity;
@@ -51,21 +44,19 @@ import com.pasyappagent.pasy.modul.topup.topup.TopupActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import rx.functions.Action1;
 
 /**
  * Created by Dhimas on 9/20/17.
  */
 
-public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListClicked{
+public class PaymentFragment extends Fragment{
     private Button topupBtn;
     private Button bayarBtn;
     private Button pulsaBtn;
     private Button plnBtn;
     private Button dealsBtn;
+    private Button createPostBtn;
     private LinearLayout containerBaznas;
     private LinearLayout purchaseData;
     private LinearLayout purchasePulsa;
@@ -95,6 +86,9 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
     private ViewPager feedPager;
     private FeedPagerAdapter feedPagerAdapter;
     private ImageView feedPagerIndicatorImage;
+    private Button userTabButton;
+    private Button chatTabButton;
+    private Button trxTabButton;
 
     Context mContext;
 
@@ -133,6 +127,7 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
         pulsaBtn = (Button) view.findViewById(R.id.pulsa_btn);
         plnBtn = (Button) view.findViewById(R.id.pln_btn);
         dealsBtn = (Button) view.findViewById(R.id.deal_btn);
+        createPostBtn = (Button) view.findViewById(R.id.create_post_btn);
         containerBaznas = (LinearLayout) view.findViewById(R.id.baznas);
         purchaseData = (LinearLayout) view.findViewById(R.id.purchase_data);
         purchasePulsa = (LinearLayout) view.findViewById(R.id.purchase_pulsa);
@@ -205,6 +200,29 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
             @Override
             public void onPageScrollStateChanged(int state) {
                 // Code goes here
+            }
+        });
+
+        userTabButton = (Button) view.findViewById(R.id.userTabButton);
+        chatTabButton = (Button) view.findViewById(R.id.chatTabButton);
+        trxTabButton = (Button) view.findViewById(R.id.trxTabButton);
+
+        userTabButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                feedPager.setCurrentItem(0);
+            }
+        });
+        chatTabButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                feedPager.setCurrentItem(1);
+            }
+        });
+        trxTabButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                feedPager.setCurrentItem(2);
             }
         });
     }
@@ -310,6 +328,13 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
             @Override
             public void call(Void aVoid) {
                 gotoPurchaseActivity(Constant.TV_INTERNET);
+            }
+        });
+
+        RxView.clicks(createPostBtn).subscribe(new Action1<Void>() {
+            @Override
+            public void call(Void aVoid) {
+                startActivity(new Intent(getActivity(), CreatePostActivity.class));
             }
         });
 
@@ -474,10 +499,5 @@ public class PaymentFragment extends Fragment implements RecyFeedAdapter.OnListC
                 .setOverlayBackgroundResource(R.color.starDust_opacity_90)
                 .create();
         dialog.show();
-    }
-
-    @Override
-    public void listClicked(int position, String name) {
-
     }
 }
