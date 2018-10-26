@@ -3,222 +3,260 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.pasyappagent.pasy">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="${applicationId}.permission.MAPS_RECEIVE" />
-    <permission android:name="${applicationId}.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+
+
+    <permission
+        android:name="${applicationId}.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
 
     <application
-        tools:replace="android:icon"
         android:name=".PasyAgentApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_new_pampasy_two"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_new_pampasy_two"
         android:supportsRtl="true"
-        android:theme="@style/FullScreenTheme">
-
+        android:theme="@style/FullScreenTheme"
+        tools:replace="android:icon">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCsOhzpWuJAhwqNHKxjJUQHs8J_eNFlwNM"/>
+            android:value="AIzaSyCsOhzpWuJAhwqNHKxjJUQHs8J_eNFlwNM" />
 
-        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
-     See README(https://goo.gl/l4GJaQ) for more. -->
+        <!--
+     Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/p_logo" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <!--
+             Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
 
-        <activity android:name="com.pasyappagent.pasy.MainActivity"
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".modul.home.HomePageActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".modul.premium.agent.AgentPremiumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.premium.redeem.RedeemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.premium.successredeem.SuccessRedeemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.topup.topup.TopupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.topup.topuptransfer.TransferTopupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.topup.topupmethod.PaymentMethodTopupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.topup.topupstatus.StatusTopupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.purchase.PurchaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".modul.register.passcode.PasscodeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".modul.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".modul.register.otp.OtpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".modul.register.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".modul.baznas.donate.DonateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.baznas.BaznasActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.bpjs.bpjsforms.BpjsFormActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.bpjs.BpjsKetenagakerjaanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.splash.SplashActivity"
+            android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait">
-
-        </activity>
-
-        <activity android:name=".modul.home.HomePageActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-
-        <activity android:name=".modul.premium.agent.AgentPremiumActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.premium.redeem.RedeemActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.premium.successredeem.SuccessRedeemActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.topup.topup.TopupActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.topup.topuptransfer.TransferTopupActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.topup.topupmethod.PaymentMethodTopupActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.topup.topupstatus.StatusTopupActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.purchase.PurchaseActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
-        <activity android:name=".modul.register.passcode.PasscodeActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity android:name=".modul.login.LoginActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
-        <activity android:name=".modul.register.otp.OtpActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
-
-        <activity android:name=".modul.register.RegisterActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
-
-        <activity android:name=".modul.baznas.donate.DonateActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.baznas.BaznasActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.bpjs.bpjsforms.BpjsFormActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.bpjs.BpjsKetenagakerjaanActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.splash.SplashActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".modul.sendbalance.SendBalanceActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.checkpasscode.CheckPasscodeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.premium.register.RegisterPremiumAgentActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.transactionreview.TransactionReviewActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.login.passcode.PasscodeLoginActivity"
+        <activity
+            android:name=".modul.sendbalance.SendBalanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.requestbalance.RequestBalanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.checkpasscode.CheckPasscodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.premium.register.RegisterPremiumAgentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.transactionreview.TransactionReviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.login.passcode.PasscodeLoginActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".modul.chat.ChatActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.editprofile.EditProfileActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".modul.chat.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.editprofile.EditProfileActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".modul.premium.tutorial.TutorialPremiumActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.termcondition.TermConditionActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.login.passcode.ForgotPassActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.dialogactivity.DialogAttachPicture"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.faq.FaqActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.scanqr.ScanQRActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.home.transaction.AllTransactionActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.topup.topupcreditcard.CreditcardTopupActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.creditcard.inputcreditcard.InputCreditcardActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.creditcard.webview.VeritransWebViewActivity"/>
-        <activity android:name=".modul.premium.agent.PremiumActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.bayar.BayarActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.merchant.merchantlist.MerchantListActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.merchant.detail.MerchantDetailActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".modul.creditcard.savedcreditcard.SavedCreditcardActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".modul.creditcard.detailcreditcard.DetailCreditcardActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".modul.creditcard.addcreditcard.AddCreditcardActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".modul.promo.PromoActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".modul.promo.detail.PromoDetailActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".modul.topup.topupvirtualaccount.VirtualAccountActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".modul.verify.VerifyActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".modul.feed.posts.CreatePostActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.feed.posts.PostDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.customer.ContactCustomerActivity"
-            android:screenOrientation="portrait"/>
-
-
-        <activity android:name=".modul.deals.review.DealReviewActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".modul.deals.success.SuccessDealActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.parkir.begin.code.InputCodeBeginParkingActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.parkir.begin.scan.ScanParkirActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.parkir.begin.success.SuccessBeginParkirActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.parkir.end.code.InputCodeEndParkingActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".modul.parkir.end.review.ReviewParkingActivity"
-            android:screenOrientation="portrait"/>
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".modul.premium.tutorial.TutorialPremiumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.termcondition.TermConditionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.login.passcode.ForgotPassActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.dialogactivity.DialogAttachPicture"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.faq.FaqActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.scanqr.ScanQRActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.home.transaction.AllTransactionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.topup.topupcreditcard.CreditcardTopupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.creditcard.inputcreditcard.InputCreditcardActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".modul.creditcard.webview.VeritransWebViewActivity" />
+        <activity
+            android:name=".modul.premium.agent.PremiumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.bayar.BayarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.merchant.merchantlist.MerchantListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.merchant.detail.MerchantDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.creditcard.savedcreditcard.SavedCreditcardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.creditcard.detailcreditcard.DetailCreditcardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.creditcard.addcreditcard.AddCreditcardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.promo.PromoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.promo.detail.PromoDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.topup.topupvirtualaccount.VirtualAccountActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".modul.verify.VerifyActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".modul.feed.posts.CreatePostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.feed.posts.PostDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.customer.ContactCustomerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.feed.chats.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.deals.review.DealReviewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".modul.deals.success.SuccessDealActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.parkir.begin.code.InputCodeBeginParkingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.parkir.begin.scan.ScanParkirActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.parkir.begin.success.SuccessBeginParkirActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.parkir.end.code.InputCodeEndParkingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".modul.parkir.end.review.ReviewParkingActivity"
+            android:screenOrientation="portrait" />
 
         <!-- [START firebase_service] -->
-        <service
-            android:name=".messaging.MyFirebaseMessagingService">
+        <service android:name=".messaging.MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
         <!-- [END firebase_service] -->
         <!-- [START firebase_iid_service] -->
-        <service
-            android:name=".messaging.MyFirebaseInstanceIDService">
+        <service android:name=".messaging.MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="b8f5144ed2d3d3bef39f5ae5a79066327c050185" />
+
+        <activity android:name=".modul.customer.DetailContactCustomer"></activity>
     </application>
 
 </manifest>

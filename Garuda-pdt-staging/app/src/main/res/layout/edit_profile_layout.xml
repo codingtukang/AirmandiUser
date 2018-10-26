@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -24,16 +25,33 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal">
-                <ImageView
-                    android:layout_width="@dimen/d120"
-                    android:layout_height="@dimen/d120"
-                    android:src="@drawable/ic_avatar"
-                    android:layout_marginVertical="@dimen/d15"/>
+                <FrameLayout
+                    android:layout_width="@dimen/d110"
+                    android:layout_height="@dimen/d110"
+                    android:layout_marginVertical="@dimen/d15">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="@dimen/d110"
+                        android:layout_height="@dimen/d110"
+                        android:id="@+id/avatar_img"
+                        android:src="@drawable/ic_avatar"/>
+
+                    <ImageView
+                        android:id="@+id/change_picture_img"
+                        android:layout_width="@dimen/d40"
+                        android:layout_height="@dimen/d40"
+                        android:layout_gravity="bottom|right"
+                        app:srcCompat="@drawable/avatar_change_btn" />
+                    <Button
+                        android:id="@+id/change_picture_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/transparent"/>
+                </FrameLayout>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/register_name"
-                    android:hint="Nama Lengkap"
+                    android:hint="Nama Depan"
                     android:maxLength="25"
                     android:textSize="@dimen/s14"
                     android:background="@drawable/border_bottom"
@@ -43,9 +61,21 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nomor Handphone"
-                    android:id="@+id/register_mobile"
+                    android:id="@+id/register_last_name"
+                    android:hint="Nama Belakang"
+                    android:maxLength="25"
+                    android:textSize="@dimen/s14"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/d15"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/register_username"
+                    android:hint="Username"
                     android:enabled="false"
+                    android:maxLength="25"
                     android:textSize="@dimen/s14"
                     android:background="@drawable/border_bottom"
                     android:textColor="@color/black"
@@ -62,18 +92,81 @@
                     android:textColor="@color/black"
                     android:padding="@dimen/d15"/>
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nomor Handphone"
+                    android:id="@+id/register_mobile"
+                    android:enabled="false"
+                    android:textSize="@dimen/s14"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/d15"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_bottom">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/d15"
+                        android:textColor="#808080"
+                        android:layout_weight="1"
+                        android:text="Jenis Kelamin"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/d15"
+                        android:paddingTop="@dimen/d15"
+                        android:paddingBottom="@dimen/d15"
+                        android:textColor="#000"
+                        android:layout_weight="1"
+                        android:text="Laki-laki"
+                        android:id="@+id/gender_label"
+                        android:gravity="right"/>
+
+                    <Switch
+                        android:id="@+id/switch_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/d15"
+                        android:layout_weight="0.1"/>
+                </LinearLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/register_address"
+                    android:hint="Alamat"
+                    android:textSize="@dimen/s14"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/d15"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/register_birthdate"
+                    android:hint="Tanggal Lahir"
+                    android:focusable="false"
+                    android:textSize="@dimen/s14"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/d15"/>
+
 
             </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/d40"
-                android:background="@drawable/border_round_blue_gradient"
-                android:textColor="@color/white"
-                android:id="@+id/process_register"
-                android:layout_margin="@dimen/d15"
-                android:text="selesai"/>
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/d40"-->
+                <!--android:background="@drawable/border_round_blue_gradient"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:id="@+id/process_register"-->
+                <!--android:layout_margin="@dimen/d15"-->
+                <!--android:text="selesai"/>-->
         </LinearLayout>
     </LinearLayout>
 

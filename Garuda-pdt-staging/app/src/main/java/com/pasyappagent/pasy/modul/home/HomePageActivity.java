@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -57,6 +58,8 @@ import com.pasyappagent.pasy.modul.purchase.PurchaseActivity;
 import com.pasyappagent.pasy.modul.register.otp.OtpActivity;
 import com.pasyappagent.pasy.modul.register.passcode.PasscodeActivity;
 import com.pasyappagent.pasy.modul.scanqr.ScanQRActivity;
+import com.zopim.android.sdk.api.ZopimChat;
+import com.zopim.android.sdk.prechat.ZopimChatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -98,6 +101,7 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
     private FloatingActionButton splitBillFabMenu;
     private FloatingActionButton tarikSaldoFabMenu;
     private FloatingActionButton undangTemanFabMenu;
+    private FloatingActionButton chatCSFabMenu;
 
     //Payment & Promo Menu Container
     private RelativeLayout menuContainer;
@@ -121,6 +125,11 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
 
     private Context mContext;
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ZopimChat.init("64QsOeI0uRiUKrWo1qO4NxG9OFdxK5TG");
+    }
 
     @Override
     protected int getLayoutResourceId() {
@@ -299,13 +308,30 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
         splitBillFabMenu = (FloatingActionButton) findViewById(R.id.splitBillFabMenu);
         tarikSaldoFabMenu = (FloatingActionButton) findViewById(R.id.tarikSaldoFabMenu);
         undangTemanFabMenu= (FloatingActionButton) findViewById(R.id.undangTemanFabMenu);
+        chatCSFabMenu= (FloatingActionButton) findViewById(R.id.chatCSFabMenu);
 
         transferSaldoFabMenu.setLabelText("Transfer Saldo");
 
         transferSaldoFabMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ContactCustomerActivity.class));
+                Intent intent = new Intent(HomePageActivity.this, ContactCustomerActivity.class);
+                intent.putExtra("screen_type", "transfer");
+                startActivity(intent);
+            }
+        });
+        requestSaldoFabMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePageActivity.this, ContactCustomerActivity.class);
+                intent.putExtra("screen_type", "request");
+                startActivity(intent);
+            }
+        });
+        chatCSFabMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ZopimChatActivity.class));
             }
         });
     }
@@ -329,11 +355,24 @@ public class HomePageActivity extends BaseActivity implements HomeView, CommonIn
     }
 
     @Override
+    protected void onSubmitBtnPressed() {
+
+    }
+
+    protected PaymentFragment paymentFragment;
+    @Override
     public void onSuccessGetBalance(String balance) {
         this.balance = balance;
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.container_home, new PaymentFragment().newInstance(balance));
-        ft.commit();
+        if (paymentFragment == null){
+            paymentFragment = new PaymentFragment().newInstance(balance);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.container_home, paymentFragment);
+            ft.commit();
+        }
+        else{
+            paymentFragment.setBalance(balance);
+        }
+
     }
 
     @Override

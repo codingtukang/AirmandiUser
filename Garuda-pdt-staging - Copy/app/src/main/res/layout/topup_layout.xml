@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/topup_frame"
+    android:background="@color/white_ocean">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/toolbar"/>
+            </LinearLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_margin="@dimen/d15"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/container_topup_dialog"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/d15"
+                        android:background="@drawable/border_round_light_gray"
+                        >
+                        <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/rp_text"
+                            android:textSize="20dp"
+                            android:text="Rp"/>
+
+                        <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/d5"
+                            android:id="@+id/value_topup_txt"
+                            android:layout_toRightOf="@+id/rp_text"
+                            android:textSize="20dp"
+                            android:text="50.000"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:visibility="invisible"
+                            android:id="@+id/input_value_topup"
+                            android:layout_marginLeft="@dimen/d5"
+                            android:inputType="number"
+                            android:textSize="20dp"
+                            android:hint="Pilih Nominal"
+                            android:fontFamily="sans-serif"
+                            android:layout_toRightOf="@+id/rp_text"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/d15"
+                            android:src="@drawable/chevron_bottom"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"/>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/d15"
+                        android:padding="@dimen/d15"
+                        android:background="@drawable/border_round_light_gray">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="DETIL PEMBAYARAN"
+                            android:layout_marginBottom="@dimen/d10" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/d5">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Nominal"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="Rp. 50.000"
+                                android:textAlignment="textEnd"
+                                android:gravity="end"
+                                android:paddingRight="@dimen/d10"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/d5">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:text="Kode Unik"/>
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="888"
+                                android:textColor="@color/colorPrimary"
+                                android:textAlignment="textEnd"
+                                android:gravity="end"
+                                android:paddingRight="@dimen/d10"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/d2"
+                            android:background="@color/gray.primary_dark"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/d5"
+                            android:background="@drawable/border_round_blue_gradient"
+                            android:padding="@dimen/d10"
+                            android:gravity="center_vertical">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="   TOTAL"
+                                android:textStyle="bold"
+                                android:drawableLeft="@drawable/ic_dollar_circle"
+                                android:gravity="center_vertical"
+                                />
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="Rp.50.888"
+                                android:textColor="@color/white"
+                                android:textAlignment="textEnd"
+                                android:gravity="end" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/d50"
+                        android:layout_marginTop="@dimen/d10"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="@dimen/d30"
+                                    android:layout_height="@dimen/d30"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/icon_voucher"/>
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/d35"
+                                    android:layout_marginLeft="@dimen/d10"
+                                    android:inputType="text"
+                                    android:hint="Masukan Kode Voucher"
+                                    android:id="@+id/voucher_field"
+                                    android:cursorVisible="false"
+                                    android:background="@color/transparent"/>
+                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="@dimen/d20"
+                                android:layout_height="@dimen/d20"
+                                android:visibility="gone"
+                                android:id="@+id/status_voucher_logo"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"/>
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/starDust_opacity_40"/>
+                    </LinearLayout>
+
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/d10"
+                        android:text="Pilih metode pembayaran"/>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/transfer_radio"
+                            android:text="Bank Transfer"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Manual Pengecekan (08.00 - 18.00 WIB)"
+                            android:textSize="11sp"
+                            android:layout_marginLeft="33dp"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/creditcard_radio"
+                            android:layout_marginTop="@dimen/d10"
+                            android:text="Debit/Credit Card"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Konfirmasi Otomatis 24 Jam"
+                            android:textSize="11sp"
+                            android:layout_marginLeft="33dp"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/d10"
+                            android:id="@+id/virtual_account"
+                            android:text="Virtual Account Semua Bank"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Konfirmasi Otomatis 24 Jam"
+                            android:textSize="11sp"
+                            android:layout_marginLeft="33dp"/>
+                    </RadioGroup>
+
+
+                    <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="@string/info_verifikasi"
+                        android:layout_marginTop="10dp"/>
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/d10"
+                        android:id="@+id/verify_id"
+                        android:src="@drawable/verifikasi_btn"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/d15"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/d30"
+                        android:textSize="@dimen/s18"
+                        android:id="@+id/next_btn"
+                        android:focusable="false"
+                        android:text="TOP UP"
+                        android:background="@drawable/border_round_blue_gradient"/>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/container_topup_value"
+            android:background="@color/white"
+            android:padding="@dimen/d15"
+            android:layout_marginTop="@dimen/d55">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.aigestudio.wheelpicker.WheelPicker
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/aselole"
+                    app:wheel_visible_item_count="10"
+                    app:wheel_indicator_color="@color/azure"
+                    app:wheel_item_text_color="@color/starDust_opacity_40"
+                    app:wheel_selected_item_text_color="@color/azure"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PILIH"
+                    android:textColor="@color/white"
+                    android:background="@drawable/border_round_blue_gradient"
+                    android:id="@+id/select_btn"
+                    android:layout_marginTop="@dimen/d15"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+</FrameLayout>

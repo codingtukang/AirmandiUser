@@ -125,6 +125,14 @@
             fab:fab_label="Undang Teman"
             style="@style/MenuButtonsSmall"/>
 
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/chatCSFabMenu"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/stat_notify_chat"
+            fab:fab_label="Chat dengan Customer Service" />
+
     </com.github.clans.fab.FloatingActionMenu>
     <RelativeLayout
         android:id="@+id/menuContainer"

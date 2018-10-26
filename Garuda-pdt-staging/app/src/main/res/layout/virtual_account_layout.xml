@@ -38,7 +38,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/account_name"
-                            android:text="PAMPASY"/>
+                            android:text="DOOMO"/>
                     </LinearLayout>
                     <ImageView
                         android:layout_width="@dimen/d100"

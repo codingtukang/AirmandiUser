@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_ocean">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="@dimen/d120"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_login"
+                android:src="@drawable/logo_icon"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/d35"
+            android:paddingRight="@dimen/d35"
+            android:gravity="center_horizontal">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d60"
+                android:background="@drawable/border_round_light_gray"
+                android:hint="Nomor Handphone"
+                android:inputType="number|phone"
+                android:digits="1234567890"
+                android:id="@+id/input_mobile"
+                android:textSize="@dimen/s17"
+                android:textAlignment="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d25"
+                android:background="@android:color/transparent"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d60"
+                android:background="@drawable/border_rounded_full_blue"
+                android:textColor="@color/white"
+                android:id="@+id/login_btn"
+                android:text="MASUK"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d25"
+                android:background="@android:color/transparent"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d60"
+                android:background="@drawable/border_rounded_full_gray"
+                android:textColor="@color/white"
+                android:id="@+id/forgot_btn"
+                android:text="LUPA PIN"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center|center_vertical">
+            <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_info_register"
+                android:text="Belum punya akun ? "/>
+            <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/register_text"
+                android:text="Daftar"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

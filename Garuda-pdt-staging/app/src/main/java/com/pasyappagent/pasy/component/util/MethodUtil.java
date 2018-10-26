@@ -3,6 +3,7 @@ package com.pasyappagent.pasy.component.util;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -39,7 +40,7 @@ public class MethodUtil extends Application{
 
     public static void showCustomToast(Activity activityContext, String message, int image) {
         if (!TextUtils.isEmpty(message) && message.contains("AKUPAY") && !PreferenceManager.getStatusAkupay()) {
-            message = message.replace("AKUPAY", "PAMPASY");
+            message = message.replace("AKUPAY", "DOOMO");
         }
         if (activityContext != null && !TextUtils.isEmpty(message)) {
             LayoutInflater inflater = activityContext.getLayoutInflater();
@@ -201,5 +202,23 @@ public class MethodUtil extends Application{
         }
         return result.toString();
 
+    }
+
+    public static String GetCountryZipCode(Context ctx){
+        String CountryID="";
+        String CountryZipCode="";
+
+        TelephonyManager manager = (TelephonyManager) ctx.getSystemService(Context.TELEPHONY_SERVICE);
+        //getNetworkCountryIso
+        CountryID= manager.getSimCountryIso().toUpperCase();
+        String[] rl= ctx.getResources().getStringArray(R.array.CountryCodes);
+        for(int i=0;i<rl.length;i++){
+            String[] g=rl[i].split(",");
+            if(g[1].trim().equals(CountryID.trim())){
+                CountryZipCode=g[0];
+                break;
+            }
+        }
+        return CountryZipCode;
     }
 }

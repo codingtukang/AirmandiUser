@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_ocean">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/d15">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border_round_light_gray"
+            android:padding="@dimen/d15"
+            android:visibility="gone">
+            <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/topup_saldo_txt"
+                android:textSize="@dimen/s12"
+                android:text="@string/topup_saldo"
+                android:textStyle="bold"/>
+            <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/topup_saldo"
+                android:text="Rp.0"
+                android:textStyle="bold"
+                android:textSize="@dimen/s12"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border_round_light_gray"
+            android:padding="@dimen/d15"
+            android:layout_marginTop="@dimen/d15"
+            android:visibility="gone">
+            <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/s12"
+                android:id="@+id/info_saldo"
+                android:text="Info Saldo"/>
+            <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/s10"
+                android:layout_marginTop="@dimen/d10"
+                android:text="@string/order_id"/>
+            <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/s14"
+                android:textStyle="bold"
+                android:text="1234"
+                android:id="@+id/order_id_text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/d10"
+            android:id="@+id/cc_method"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/d40"
+                    android:layout_height="@dimen/d40"
+                    android:src="@drawable/debit_creditcard"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d10"
+                    android:layout_gravity="center"
+                    android:text="Debit / Credit Card"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d2"
+                android:background="@color/starDust_opacity_40"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d40"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/d20"
+            android:id="@+id/menu_banks">
+            <ImageView
+                android:layout_width="@dimen/d70"
+                android:layout_height="match_parent"
+                android:id="@+id/icon_payment"
+                android:layout_marginRight="@dimen/d20"
+                android:layout_centerVertical="true"/>
+
+            <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/bank_payment"
+                android:layout_toRightOf="@+id/icon_payment"
+                android:text="Pilih Metode Bayar"/>
+            <ImageView
+                android:layout_width="@dimen/d10"
+                android:layout_height="@dimen/d10"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/triangle_bottom"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/starDust_opacity_40"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/container_review"
+            android:layout_marginTop="@dimen/d15"
+            android:orientation="vertical"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/border_round_light_gray"
+                android:padding="@dimen/d15">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/d10">
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/topup_saldo_small"/>
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/amount_topup"
+                        android:textStyle="bold"
+                        android:text="0"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d20"
+                    android:layout_marginBottom="@dimen/d10">
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/unique_code"/>
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/unique_topup"
+                        android:textStyle="bold"
+                        android:text="0"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d20"
+                    android:layout_marginBottom="@dimen/d10">
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/biaya_layanan"/>
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fee"
+                        android:layout_alignParentRight="true"
+                        android:textStyle="bold"
+                        android:text="0"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d20"
+                    android:layout_marginBottom="@dimen/d10">
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/voucher"/>
+                    <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/red_btn_bg_color"
+                        android:id="@+id/amount_voucher_topup"
+                        android:textStyle="bold"
+                        android:text="0"/>
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/starDust_opacity_40"/>
+                <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:background="@drawable/border_round_blue_gradient"
+                    android:layout_marginTop="@dimen/d10"
+                    android:padding="@dimen/d5">
+                <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/s16"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_dollar_circle"
+                    android:gravity="center_vertical"
+                    android:text="  TOTAL"/>
+                <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/s16"
+                    android:id="@+id/total_amount"
+                    android:textStyle="bold"
+                    android:text="0.00"
+                    android:textColor="@color/white"/>
+
+
+
+            </RelativeLayout>
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_round_blue_gradient"
+                android:textColor="@color/white"
+                android:id="@+id/next_btn"
+                android:layout_marginTop="@dimen/d15"
+                android:text="LANJUT"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/dropdown_bank_list"
+            android:background="@drawable/border_round_light_gray"
+            android:orientation="vertical"
+            android:padding="@dimen/d15"
+            android:visibility="visible">
+
+            <com.pasyappagent.pasy.component.fontview.RobotoBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="BANK TRANSFER"
+                android:textAlignment="textStart"
+                android:gravity="start" />
+
+            <com.pasyappagent.pasy.component.fontview.RobotoRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilih Bank (Manual Pengecekan 08.00 - 18.00 WIB)"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="@dimen/d10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/list_bank"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollview_tutorial"
+            android:layout_margin="@dimen/d20">
+            <LinearL7uayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/first_agent"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d20"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/second_agent"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d20"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/third_agent"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d20"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/forth_agent"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d50"/>
+            </LinearL7uayout>
+        </ScrollView>
+
+        <Button
+            android:layout_width="@dimen/d100"
+            android:layout_height="@dimen/d40"
+            android:text="lanjut"
+            android:textColor="@color/white"
+            android:id="@+id/next_btn"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/green_button"
+            android:layout_marginBottom="@dimen/d20"/>
+    </RelativeLayout>
+
+</LinearLayout>

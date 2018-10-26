@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/d15"
                 android:id="@+id/text_info_first"
-                android:text="Biaya premium adalah Rp 150.000 dan akan langsung dibayarkan melalui saldo Pampasy"/>
+                android:text="Biaya premium adalah Rp 150.000 dan akan langsung dibayarkan melalui saldo Doomo"/>
         </LinearLayout>
 
         <LinearLayout

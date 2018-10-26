@@ -215,7 +215,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="Pampasy point"/>
+                android:text="Doomo point"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
